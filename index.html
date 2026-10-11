@@ -1,0 +1,485 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Online Payments & POS</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+<!-- ================= LOGIN PAGE ================= -->
+
+<section id="authPage" class="auth-page">
+
+    <div class="auth-visual">
+
+        <a class="brand light-brand" href="#">
+            <span class="brand-icon">P</span>
+            Online Payments and POS<span class="brand-dot">.</span>
+        </a>
+
+        <div class="visual-content">
+
+            <span class="eyebrow">YOUR PAYMENTS. SIMPLIFIED.</span>
+
+            <h1>
+                One platform.<br>
+                <span>Endless possibilities.</span>
+            </h1>
+
+            <p>
+                Manage everyday bill payments and discover
+                smarter Point of Sale solutions for your business.
+            </p>
+
+            <div class="visual-features">
+                <div>✓ Convenient bill payment services</div>
+                <div>✓ Modern Point of Sale solutions</div>
+                <div>✓ One simple dashboard</div>
+            </div>
+
+            <div class="visual-photo">
+                <img
+                    src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1000&q=85"
+                    alt="Customer making a payment at a checkout counter">
+            </div>
+
+        </div>
+
+        <div class="visual-footer">
+            Simple Payments. Bigger Possibilities.
+        </div>
+
+    </div>
+
+
+    <div class="auth-panel">
+
+        <div class="mobile-brand">
+            <span class="brand-icon">P</span>
+            PayEase<span class="brand-dot">.</span>
+        </div>
+
+        <!-- LOGIN FORM -->
+
+        <div id="loginView" class="auth-box">
+
+            <span class="form-tag">WELCOME BACK</span>
+
+            <h2>Sign in to Online Payments and POS</h2>
+
+            <p class="form-description">
+                Enter your details to access your dashboard.
+            </p>
+
+            <form id="loginForm">
+
+                <label for="loginEmail">Email address</label>
+
+                <input
+                    type="email"
+                    id="loginEmail"
+                    placeholder="you@example.com"
+                    autocomplete="username"
+                    required>
+
+                <label for="loginPassword">Password</label>
+
+                <div class="password-wrap">
+
+                    <input
+                        type="password"
+                        id="loginPassword"
+                        placeholder="Enter your password"
+                        autocomplete="current-password"
+                        minlength="8"
+                        required>
+
+                    <button
+                        type="button"
+                        class="show-password"
+                        data-target="loginPassword">
+                        Show
+                    </button>
+
+                </div>
+
+                <div class="form-options">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="rememberMe">
+                        Remember me
+                    </label>
+
+                    <button type="button"
+                            class="text-button"
+                            id="forgotPassword">
+                        Forgot password?
+                    </button>
+                </div>
+
+                <button type="submit" class="primary-button">
+                    Sign In <span>→</span>
+                </button>
+
+            </form>
+
+            <div class="divider">
+                <span>NEW TO ONLINE PAYMENTS AND POS?</span>
+            </div>
+
+            <button class="secondary-button" id="openRegister">
+                Create an Account
+            </button>
+
+            <p class="security-note">
+                🔒 Demo interface — do not enter real banking passwords.
+            </p>
+
+        </div>
+
+
+        <!-- REGISTRATION FORM -->
+
+        <div id="registerView" class="auth-box hidden">
+
+            <span class="form-tag">GET STARTED</span>
+
+            <h2>Create your account</h2>
+
+            <p class="form-description">
+                Join PayEase to explore payments and POS solutions.
+            </p>
+
+            <form id="registerForm">
+
+                <label for="registerName">Full name</label>
+
+                <input
+                    type="text"
+                    id="registerName"
+                    placeholder="Enter your full name"
+                    autocomplete="name"
+                    maxlength="80"
+                    required>
+
+                <label for="registerEmail">Email address</label>
+
+                <input
+                    type="email"
+                    id="registerEmail"
+                    placeholder="you@example.com"
+                    autocomplete="email"
+                    required>
+
+                <label for="registerPassword">Create password</label>
+
+                <div class="password-wrap">
+
+                    <input
+                        type="password"
+                        id="registerPassword"
+                        placeholder="At least 8 characters"
+                        autocomplete="new-password"
+                        minlength="8"
+                        required>
+
+                    <button
+                        type="button"
+                        class="show-password"
+                        data-target="registerPassword">
+                        Show
+                    </button>
+
+                </div>
+
+                <label class="checkbox-label terms-label">
+                    <input type="checkbox" id="acceptTerms" required>
+                    I agree to the demo terms of use.
+                </label>
+
+                <button type="submit" class="primary-button">
+                    Create Account <span>→</span>
+                </button>
+
+            </form>
+
+            <p class="switch-auth">
+                Already have an account?
+                <button class="text-button" id="openLogin">
+                    Sign in
+                </button>
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= MAIN DASHBOARD ================= -->
+
+<section id="dashboard" class="dashboard hidden">
+
+    <header class="dashboard-header">
+
+        <a class="brand" href="#dashboard">
+            <span class="brand-icon">P</span>
+            PayEase<span class="brand-dot">.</span>
+        </a>
+
+        <nav class="dashboard-nav">
+            <a href="#dashboardHome">Dashboard</a>
+            <a href="#billServices">Bill Payments</a>
+            <a href="#posServices">POS Solutions</a>
+        </nav>
+
+        <div class="user-area">
+
+            <div class="avatar" id="userAvatar">U</div>
+
+            <div class="user-details">
+                <strong id="userName">User</strong>
+                <small>Demo Account</small>
+            </div>
+
+            <button id="logoutButton" class="logout-button">
+                Logout ↗
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <main class="dashboard-main" id="dashboardHome">
+
+        <div class="welcome-row">
+
+            <div>
+                <span class="form-tag">YOUR PAYMENT CENTER</span>
+
+                <h1 id="welcomeHeading">Welcome back!</h1>
+
+                <p>
+                    Explore payment services and solutions for your business.
+                </p>
+            </div>
+
+            <div class="date-badge" id="currentDate"></div>
+
+        </div>
+
+
+        <!-- DASHBOARD BANNER -->
+
+        <section class="dashboard-banner">
+
+            <div class="banner-content">
+
+                <span>SMARTER PAYMENTS START HERE</span>
+
+                <h2>Every payment.<br>One simple experience.</h2>
+
+                <p>
+                    Discover convenient bill payment services
+                    and explore modern POS solutions.
+                </p>
+
+                <a href="#billServices" class="banner-button">
+                    Explore Services →
+                </a>
+
+            </div>
+
+            <img
+                src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1000&q=85"
+                alt="Retail payment experience">
+
+        </section>
+
+
+        <!-- QUICK ACCESS -->
+
+        <section class="dashboard-section" id="billServices">
+
+            <div class="section-title">
+
+                <div>
+                    <span class="form-tag">QUICK ACCESS</span>
+                    <h2>Online Bill Payments</h2>
+                    <p>Select a service to explore its options.</p>
+                </div>
+
+            </div>
+
+            <div class="service-grid">
+
+                <article class="dashboard-card">
+                    <div class="service-symbol electric">⚡</div>
+                    <h3>Electricity</h3>
+                    <p>Explore electricity bill services.</p>
+                    <button data-service="Electricity Bills">Explore →</button>
+                </article>
+
+                <article class="dashboard-card">
+                    <div class="service-symbol water">💧</div>
+                    <h3>Water Bills</h3>
+                    <p>Explore water utility payments.</p>
+                    <button data-service="Water Bills">Explore →</button>
+                </article>
+
+                <article class="dashboard-card">
+                    <div class="service-symbol mobile">📱</div>
+                    <h3>Mobile Recharge</h3>
+                    <p>Explore supported recharge options.</p>
+                    <button data-service="Mobile Recharge">Explore →</button>
+                </article>
+
+                <article class="dashboard-card">
+                    <div class="service-symbol internet">📶</div>
+                    <h3>Broadband</h3>
+                    <p>Explore internet bill services.</p>
+                    <button data-service="Broadband Bills">Explore →</button>
+                </article>
+
+                <article class="dashboard-card">
+                    <div class="service-symbol television">📺</div>
+                    <h3>DTH Recharge</h3>
+                    <p>Explore television recharge options.</p>
+                    <button data-service="DTH Recharge">Explore →</button>
+                </article>
+
+                <article class="dashboard-card">
+                    <div class="service-symbol gas">🔥</div>
+                    <h3>Gas Bills</h3>
+                    <p>Explore supported gas payments.</p>
+                    <button data-service="Gas Bills">Explore →</button>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- POS SECTION -->
+
+        <section class="dashboard-section" id="posServices">
+
+            <div class="section-title">
+
+                <div>
+                    <span class="form-tag">FOR YOUR BUSINESS</span>
+                    <h2>Point of Sale Solutions</h2>
+                    <p>Explore POS systems for your business needs.</p>
+                </div>
+
+            </div>
+
+            <div class="pos-grid">
+
+                <article class="pos-card">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1556742111-a301076d9d18?auto=format&fit=crop&w=800&q=85"
+                        alt="Countertop card payment terminal">
+
+                    <div class="pos-card-body">
+                        <span class="pos-label">RETAIL PAYMENTS</span>
+                        <h3>Countertop POS</h3>
+                        <p>Payment terminal solutions for fixed checkout counters.</p>
+
+                        <button data-product="Countertop POS">
+                            Enquire Now →
+                        </button>
+                    </div>
+
+                </article>
+
+
+                <article class="pos-card">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=85"
+                        alt="Smartphone for mobile payment solutions">
+
+                    <div class="pos-card-body">
+                        <span class="pos-label">MOBILE PAYMENTS</span>
+                        <h3>Mobile POS</h3>
+                        <p>Explore mobile payment options for businesses on the move.</p>
+
+                        <button data-product="Mobile POS">
+                            Enquire Now →
+                        </button>
+                    </div>
+
+                </article>
+
+
+                <article class="pos-card">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?auto=format&fit=crop&w=800&q=85"
+                        alt="Retail business processing a payment">
+
+                    <div class="pos-card-body">
+                        <span class="pos-label">SMART BUSINESS</span>
+                        <h3>Smart POS</h3>
+                        <p>Explore integrated business and payment management.</p>
+
+                        <button data-product="Smart POS">
+                            Enquire Now →
+                        </button>
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- HELP BANNER -->
+
+        <section class="help-banner">
+
+            <div>
+                <h2>Need help choosing a POS?</h2>
+                <p>Contact our team to discuss your business requirements.</p>
+            </div>
+
+            <a href="mailto:hello@example.com">
+                Contact Us →
+            </a>
+
+        </section>
+
+
+        <footer class="dashboard-footer">
+            <p>© <span id="copyrightYear"></span> PayEase.</p>
+            <p>Simple Payments. Bigger Possibilities.</p>
+        </footer>
+
+    </main>
+
+</section>
+
+
+<!-- NOTIFICATION -->
+
+<div id="notification" class="notification" role="status" aria-live="polite"></div>
+
+</body>
+</html>
